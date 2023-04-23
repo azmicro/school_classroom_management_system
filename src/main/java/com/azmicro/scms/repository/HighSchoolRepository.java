@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+
 public interface HighSchoolRepository extends JpaRepository<HighSchool, Long> {
 
     List<HighSchool> findByNameAr(String nameAr);

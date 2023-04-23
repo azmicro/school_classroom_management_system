@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Date;
 import java.util.List;
 
-@Repository
 public interface SchoolYearRepository extends JpaRepository<SchoolYear, Long> {
     SchoolYear findByWording(String wording);
     List<SchoolYear> findAllByOrderByStartDateAsc();
