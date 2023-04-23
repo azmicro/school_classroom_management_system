@@ -1,2 +1,7 @@
-package com.azmicro.scms.enums;public enum Gender {
+package com.azmicro.scms.enums;
+
+public enum Gender {
+
+    G, F
+
 }

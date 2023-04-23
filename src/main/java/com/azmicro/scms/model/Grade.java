@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class AClass implements Serializable {
+public class Grade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class AClass implements Serializable {
     @Column(name = "numberOfStudent")
     private int numberOfStudent;
 
-    @OneToMany(mappedBy = "aclass")
+    @OneToMany(mappedBy = "grade")
     private List<Student> students;
 
-    @OneToMany(mappedBy = "aclass")
+    @OneToMany(mappedBy = "grade")
     private List<Course> courses;
 
     @ManyToOne

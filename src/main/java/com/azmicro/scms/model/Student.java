@@ -61,8 +61,8 @@ public class Student implements Serializable {
     private List<StudentExam> studentExams;
 
    @ManyToOne
-    @JoinColumn(name = "idClass")
-    private Class aclass;
+    @JoinColumn(name = "idGrade")
+    private Grade grade;
 
 
 
