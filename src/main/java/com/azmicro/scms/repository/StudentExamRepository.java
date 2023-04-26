@@ -12,7 +12,7 @@ public interface StudentExamRepository extends JpaRepository<StudentExam, Long> 
 
     List<StudentExam> findByExam(Exam exam);
 
-    List<StudentExam> findByExamAndStudent(Exam exam, Student student);
+    List<StudentExam> findByExamIdAndStudentId(Long examId, Long studentId);
 
     List<StudentExam> findByExamDate(Date examDate);
 
@@ -20,5 +20,7 @@ public interface StudentExamRepository extends JpaRepository<StudentExam, Long> 
 
     List<StudentExam> findByMark(double mark);
 
-    List<StudentExam> findByStudent(Student student);
+    List<StudentExam> findByStudentId(Long studentId);
+
+    List<StudentExam> findByExamId(Long examId);
 }

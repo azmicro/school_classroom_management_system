@@ -17,7 +17,7 @@ public interface AbsenceRepository extends JpaRepository<Absence, Long> {
 
     List<Absence> findByStudentIdAndDateOfAbsence(Long studentId, String dateOfAbsence);
 
-    @Query("SELECT a FROM Absence a WHERE a.student.id = :studentId AND a.semester.id = :semesterId")
+
     List<Absence> findBySemesterIdAndDateOfAbsence(Long semesterId, String dateOfAbsence);
 
 }

@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface StudentActivityRepository extends JpaRepository<StudentActivity, Long> {
 
-    List<StudentActivity> findByStudent(Student student);
+    List<StudentActivity> findByStudentId(Long studentId);
 
-    List<StudentActivity> findByActivity(Activity activity);
+    List<StudentActivity> findByActivityId(Long activityId);
 
-    List<StudentActivity> findByStudentAndActivity(Student student, Activity activity);
+    List<StudentActivity> findByStudentIdAndActivityId(Long studentId, Long activityId);
 }

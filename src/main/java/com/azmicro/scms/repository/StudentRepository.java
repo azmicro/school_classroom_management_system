@@ -18,7 +18,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<Student> findAll();
     List<Student> findByLastNameFrContainingIgnoreCase(String lastNameFr);
     List<Student> findByFirstNameFrContainingIgnoreCase(String firstNameFr);
-    List<Student> findByGrade(Grade grade);
+    List<Student> findByGradeId(Long gradeId);
     List<Student> findByDateOfBirth(Date dateOfBirth);
     List<Student> findByLastNameFrAndFirstNameFr(String lastNameFr, String firstNameFr);
 }

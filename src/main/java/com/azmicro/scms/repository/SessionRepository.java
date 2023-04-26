@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 
 public interface SessionRepository extends JpaRepository<Session, Long> {
 
-    List<Session> findByGrade(Grade grade);
+    List<Session> findByGradeId(Long gradeId);
 
 }
