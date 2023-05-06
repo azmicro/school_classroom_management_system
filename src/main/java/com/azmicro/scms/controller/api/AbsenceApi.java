@@ -4,6 +4,7 @@ import com.azmicro.scms.dto.AbsenceDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,11 +17,20 @@ import static com.azmicro.scms.utils.Constants.APP_ROOT;
 public interface AbsenceApi {
     @PostMapping(value = APP_ROOT+"/absences/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Create absences", notes = "this method creates a new absences or modified", response = AbsenceDto.class)
-    @ApiResponse(code = 200, message = "Successfully; absence created")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully; absence created")
+    })
+
     AbsenceDto save(@RequestBody AbsenceDto dto);
     @DeleteMapping(value = APP_ROOT+"/absences/delete/{idAbsence}")
     void delete(@PathVariable("idAbsence") Long id);
+
     @GetMapping(value = APP_ROOT+"/absences/{idAbsence}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "search absence", notes = "to search absence", response = AbsenceDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully; absence found by id"),
+            @ApiResponse(code = 404, message = "absence not found by id")
+    })
     AbsenceDto findById(@PathVariable("idAbsence") Long id);
     @GetMapping(value = APP_ROOT+"/absences/all", produces = MediaType.APPLICATION_JSON_VALUE)
     List<AbsenceDto> findAll();
