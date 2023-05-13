@@ -61,6 +61,7 @@ public interface AbsenceApi {
             @ApiResponse(responseCode = "200", description = "The absences are retrieved successfully.",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             array = @ArraySchema(schema = @Schema(implementation = AbsenceDto.class)))),
+            @ApiResponse(responseCode = "400", description = "Bad request."),
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     List<AbsenceDto> findByStudentId(@PathVariable("idStudent") Long studentId);
@@ -71,6 +72,7 @@ public interface AbsenceApi {
             @ApiResponse(responseCode = "200", description = "The absences are retrieved successfully.",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             array = @ArraySchema(schema = @Schema(implementation = AbsenceDto.class)))),
+            @ApiResponse(responseCode = "400", description = "Bad request."),
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     List<AbsenceDto> findBySemesterId(@PathVariable("idSemester") Long semesterId);
@@ -81,6 +83,7 @@ public interface AbsenceApi {
             @ApiResponse(responseCode = "200", description = "The absences are retrieved successfully.",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             array = @ArraySchema(schema = @Schema(implementation = AbsenceDto.class)))),
+            @ApiResponse(responseCode = "400", description = "Bad request."),
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     List<AbsenceDto> findByStudentAndSemester(@PathVariable("idStudent") Long studentId, @PathVariable("idSemester") Long semesterId);

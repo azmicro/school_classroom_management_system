@@ -51,7 +51,6 @@ public class SchoolClassroomManagementSystemApplication {
         List<UserDto> allUsers = userService.findAll();
         System.out.println("All users: " + allUsers);
 
-
         //userService.delete(savedUser.getId());
         //System.out.println("User deleted");
     }
